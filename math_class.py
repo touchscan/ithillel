@@ -10,7 +10,5 @@ stud_b = int(stud_b)
 stud_c = int(stud_c)
 # Берем счеты и пытаемся считать
 total_stud = stud_a + stud_b + stud_c
-total_desk = total_stud // desk_seat
-if total_stud % desk_seat:
-    total_desk += 1
+total_desk = total_stud - ((total_stud // desk_seat) * 2) + (total_stud // desk_seat)
 print('Your classes need ', total_desk, ' desks')
