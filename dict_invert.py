@@ -7,8 +7,14 @@ din = {
 dout = {}
 
 for i in din.keys():
-    for j in din.get(i):
-        dout.setdefault(j)
-        if dout[j]: dout[j] = dout[j], i
-        else: dout[j] = i
+	for j in din.get(i):
+		dout.setdefault(j)
+		if dout[j]:
+			lst = [dout[j], i]
+			dout[j] = lst
+
+		else:
+			lst = [i]
+			dout[j] = lst
+
 pprint(dout)
