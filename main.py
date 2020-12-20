@@ -1,2 +1,2 @@
-import cycle_slide
-cycle_slide
+import dict_invert
+dict_invert
