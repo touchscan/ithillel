@@ -4,21 +4,52 @@ from pprint import pprint
 lst = []
 tmp = []
 
-def sorter(l):
+def sorter(l, t):
+# Сумма элементов в столбцах
 	for i in range (len(l)):
 		for j in range (len(l)):
-			tmp[i] += lst[j][i]
+			t[i] += lst[j][i]
+	
+# Сотрировка положения столбцов по возрастанию сумм
 	for y in range (m):
-		for x in range (m - 1):
-			if tmp[x] > tmp[x+1]:
-				tmp[x], tmp[x+1] = tmp[x+1], tmp[x]
+		for x in range (m - 1 - y):
+			if t[x] > t[x+1]:
+				t[x], t[x+1] = t[x+1], t[x]
 				for z in range (m):
 					l[z][x], l[z][x+1] = l[z][x+1], l[z][x]
-	
-			
 
-def output():
-	return
+# Сортировка элементов в столбцах по условию
+
+# четный растет сверху вниз
+	for x in range (1, m, 2):
+		for y in range (m - 1):
+			for z in range (m - 1):
+				if lst[z][x] > lst[z+1][x]:
+					lst[z][x], lst[z+1][x] = lst[z+1][x], lst[z][x]
+
+# нечетный - снизу вверх
+	for x in range(0, m, 2):
+		for y in range (m - 1):
+			for z in range (m-1):
+				if lst[z][x] < lst[z+1][x]:
+					lst[z][x], lst[z+1][x] = lst[z+1][x], lst[z][x]
+
+
+def output(l, t):
+	for y in range (m):
+		for x in range (m):
+			if l[y][x] < 10:
+				print(l[y][x], '    ', end='')
+			else:
+				print(l[y][x], '   ' , end='')
+		print()
+	print()
+	for z in range (m):
+		if t[z] < 10:
+			print(t[z], ' ', end='')
+		else:
+			print(t[z], '  ', end='')
+	print()
 
 while True:
 	try:
@@ -30,11 +61,13 @@ while True:
 
 for i in range (m):
 	lst.insert(i, [randint(1, 50) for _ in range (m)])
+	tmp = [0] * m
+
+	tmp = [0] * m
+
+
+	tmp = [0] * m
 
 tmp = [0] * m
-
-sorter(lst)
-
-pprint(lst)
-print()
-pprint(tmp)
+sorter(lst, tmp)
+output(lst, tmp)
