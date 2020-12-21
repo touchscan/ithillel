@@ -1,2 +1,2 @@
-import matrix_2
-matrix_2
+import cubes_sum
+cubes_sum
