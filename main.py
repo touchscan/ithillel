@@ -1,2 +1,2 @@
-import cubes_sum
-cubes_sum
+import chess_horse
+chess_horse
