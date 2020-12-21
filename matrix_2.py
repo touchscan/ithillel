@@ -52,14 +52,16 @@ def output(l, t):
 
 while True:
 	try:
-		m = int(input('Введите размер матрицы, целое число, большее 5: '))
+		m = int(input('Введите число строк: '))
+		n = int(input('Введите число столбцов: '))
 	except ValueError:
-		print('Некорректная величина!')
+		print('Некорректное значение!')
 	else:
-		if m > 5: break
+		if m > 0 or n > 0: break
+		else: print('Некорректная величина!')
 
 for i in range (m):
-	lst.insert(i, [randint(1, 50) for _ in range (m)])
+	lst.insert(i, [randint(1, 50) for _ in range (n)])
 
 tmp = [0] * m
 sorter(lst, tmp)
