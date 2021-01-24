@@ -1,2 +1,2 @@
-import counter
-counter
+import studs_n_groups
+studs_n_groups
