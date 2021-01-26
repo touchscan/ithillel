@@ -1,2 +1,2 @@
-import studs_n_groups
-studs_n_groups
+import buffer
+buffer
